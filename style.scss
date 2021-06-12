@@ -1,0 +1,204 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: linear-gradient(to right, #00b4d8, #3c8fbb);
+    color: white;
+    min-height: 100vh;
+    font-family: 'Roboto Mono', monospace;
+}
+
+header, form{
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input, form button{
+    padding: 0.5rem;
+    border: none;
+    font-size: 1.5rem;
+    background: white;
+}
+
+form button{
+    color: #023047;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover{
+        background: #033d5a;
+        color: white;
+        transform: translateY(-0.12rem);
+
+        & i{
+            transform: scale(-1,-1);
+        }
+    }
+}
+
+.todo-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Do Hyeon', sans-serif;
+
+    .items-list{
+        min-width: 20%;
+        list-style: none;
+    }
+
+    .todo{
+        margin: 0.5rem;
+        background: white;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.5rem;
+        transition: all 1s ease;
+    }
+
+    .new-li{
+        flex: 1;
+        padding: 0 0.5rem;
+    }
+
+    .check-btn, .del-btn{
+        padding: 1rem;
+        border: none;
+        background: #001d3d;
+        color: white;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .del-btn{
+        background: #22223b;
+    }
+}
+
+.fa-clipboard-check, .fa-eraser{
+    pointer-events: none;
+}
+
+.checked{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.shakeMe {
+  animation: shake 0.5s;
+  opacity: 0;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg);}
+}
+
+select{
+    appearance: none;
+    border: none;
+    outline: none;
+    color: #031722;
+    width: 10rem;
+    cursor: pointer;
+    padding: 0.8rem;
+}
+
+.selector{
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+
+    &::after{
+        content: "\25BC";
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #063363;
+        padding: 1rem;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    &:hover::after{
+        background: white;
+        color: #063363;
+    }
+}
+
+// .clicked{
+//     content: "\25B2";
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     background: #063363;
+//     padding: 1rem;
+//     pointer-events: none;
+//     transition: all 0.3s ease;
+// }
+
+// .entered{
+//     background: white;
+//     color: #063363;
+// }
+
+@media (max-width : 480px){
+    header h1{
+        font-size: 25px;
+    }
+
+    form , select{
+        flex-wrap: wrap;
+    }
+
+    form{
+        margin-left: 9px;
+        margin-right: 9px;
+    }
+
+    .inputEnter{
+        flex: 1;
+    }
+
+    select{
+        flex: 1;
+    }
+
+    // form {
+    //     margin-left: 35px;
+    //     // flex-wrap: wrap;
+    //     flex: 1 1 40rem;
+    // }
+
+    // .selector{
+    //     flex-wrap: wrap;
+    //     flex: 1 1 40rem;
+    // }
+
+    form input, form button{
+        padding: 0.5rem;
+        border: none;
+        font-size: 1rem;
+        background: white;
+    }
+
+
+
+}
